@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Invoice Downloader",
+  "description": "A small helper for downloading Uber receipts.",
+  "version": "1.0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://riders.uber.com/trips*"
+      ],
+      "js": [
+        "js/vendor.js",
+        "js/content_script.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/vendor.js",
+      "js/background.js"
+    ]
+  },
+  "permissions": [
+    "https://riders.uber.com/*",
+    "webNavigation"
+  ]
+}
